@@ -1,6 +1,8 @@
 # Sono
 
-A modern, elegant presentation application built with React, TypeScript, and Tailwind CSS.
+An interactive web-based physics presentation about the **sonometer** - exploring sound, vibration, and standing waves in stringed instruments. Created for Semiconductors and Optoelectronic Devices course.
+
+🔗 **[Live Demo](http://omsingh.me/sono/)**
 
 ## Features
 
@@ -9,6 +11,7 @@ A modern, elegant presentation application built with React, TypeScript, and Tai
 - 🎭 Multiple slide variants (title, light, dark)
 - 📱 Responsive design
 - ⚡ Fast and smooth animations
+- 🎵 Physics concepts visualized for the sonometer
 
 ## Tech Stack
 
@@ -23,14 +26,14 @@ A modern, elegant presentation application built with React, TypeScript, and Tai
 
 ### Prerequisites
 
-- Node.js (v18 or higher)
-- npm or bun
+- Node.js (v20 or higher)
+- npm
 
 ### Installation
 
 ```sh
 # Clone the repository
-git clone <YOUR_GIT_URL>
+git clone https://github.com/omsingh02/sono.git
 
 # Navigate to the project directory
 cd sono
@@ -54,10 +57,14 @@ npm run preview
 
 ## Project Structure
 
-- `/src/components/Presentation` - Core presentation components
-- `/src/components/ui` - Reusable UI components (shadcn/ui)
+- `/src/components/Presentation` - Core presentation components and slide content
+- `/src/components/ui` - Reusable UI components
 - `/src/pages` - Route pages
-- `/src/lib` - Utility functions
+- `/config` - Configuration files (Vite, Tailwind, TypeScript, etc.)
+
+## Deployment
+
+This project is automatically deployed to GitHub Pages via GitHub Actions on every push to `main`.
 
 ## License
 
