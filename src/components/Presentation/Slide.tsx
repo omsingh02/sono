@@ -20,6 +20,13 @@ const Slide = ({ slide, direction }: SlideProps) => {
         )}
       >
         <div className="stagger-children max-w-4xl">
+          {slide.image && (
+            <img 
+              src={slide.image} 
+              alt={slide.title} 
+              className="w-full max-w-2xl mx-auto mb-8 rounded-lg shadow-2xl"
+            />
+          )}
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-normal tracking-tight mb-6">
             {slide.title}
           </h1>
@@ -56,6 +63,14 @@ const Slide = ({ slide, direction }: SlideProps) => {
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mb-10">
             {slide.title}
           </h2>
+          
+          {slide.image && (
+            <img 
+              src={slide.image} 
+              alt={slide.title} 
+              className="w-full max-w-xl mb-8 rounded-lg shadow-xl"
+            />
+          )}
           
           {slide.steps && (
             <div className="space-y-4 md:space-y-5">
@@ -115,6 +130,14 @@ const Slide = ({ slide, direction }: SlideProps) => {
         <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 md:mb-8">
           {slide.title}
         </h2>
+
+        {slide.image && (
+          <img 
+            src={slide.image} 
+            alt={slide.title} 
+            className="w-full max-w-xl mb-8 rounded-lg shadow-xl"
+          />
+        )}
 
         {slide.question && (
           <p className="text-lg md:text-xl lg:text-2xl text-primary italic mb-8">
