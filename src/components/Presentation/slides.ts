@@ -16,6 +16,7 @@ export interface SlideContent {
   principles?: { title: string; description: string }[];
   futureItems?: { title: string; description: string }[];
   image?: string;
+  backgroundImage?: string;
 }
 
 export const slides: SlideContent[] = [
@@ -24,7 +25,7 @@ export const slides: SlideContent[] = [
     title: 'Sonometer',
     subtitle: 'How do we understand invisible sound?',
     description: 'A simple device that reveals the physics of vibration',
-    image: '/sonometer-device.png',
+    image: '/finding-pattern-in-noise.png',
   },
   {
     variant: 'content',
@@ -38,7 +39,7 @@ export const slides: SlideContent[] = [
   {
     variant: 'dark',
     title: 'Three Fundamental Principles',
-    image: '/standing-waves.png',
+    image: '/standing-wave.png',
     principles: [
       { title: 'Standing Waves', description: 'When a vibrating wire is trapped between two fixed points, waves bounce back and forth and stack on top of each other, creating spots that barely move and spots that vibrate wildly. This pattern only happens at specific frequencies.' },
       { title: 'Resonance', description: 'When the wire\'s natural vibration frequency matches the frequency of a tuning fork nearby, energy transfers perfectly and the wire vibrates with maximum amplitude (biggest swings). It\'s like pushing a swing at exactly the right moment—small pushes create huge motion.' },
@@ -48,14 +49,14 @@ export const slides: SlideContent[] = [
   {
     variant: 'content',
     title: 'The Mathematics',
+    image: '/maths.png',
     description: 'The formula f = (1/2L)√(T/μ) just captures this relationship: vibrations follow predictable patterns—same wire, same frequency, every time—whether it\'s a guitar string or a building shaking in wind.',
     highlightBox: 'Key insight: Find something\'s natural frequency, and you control it. Tighter control of resonance = tighter control of reality.',
-    image: '/wave-mathematics.png',
   },
   {
     variant: 'dark',
     title: 'Real Applications Today',
-    image: '/applications.png',
+    backgroundImage: '/real-applications.png',
     applications: [
       { emoji: '🎸', title: 'Musical Instruments', description: 'Guitar tuning, piano strings, violin bridges—luthiers use sonometer principles to test wood quality' },
       { emoji: '🏗️', title: 'Noise Control', description: 'Architects measure building vibrations to prevent resonance disasters when bridge frequencies match wind gusts' },
@@ -66,7 +67,7 @@ export const slides: SlideContent[] = [
   {
     variant: 'content',
     title: 'The Future: What\'s Coming',
-    image: '/resonance.png',
+    image: '/future-applications.png',
     futureItems: [
       { title: 'Smart Vibration Sensors', description: 'Roads and bridges detecting cracks by monitoring frequency changes in real time' },
       { title: 'Wireless Power Transfer', description: 'Transmitting electricity wirelessly by matching transmitter and receiver frequencies perfectly' },

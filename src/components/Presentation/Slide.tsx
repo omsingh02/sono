@@ -20,13 +20,6 @@ const Slide = ({ slide, direction }: SlideProps) => {
         )}
       >
         <div className="stagger-children max-w-4xl">
-          {slide.image && (
-            <img 
-              src={slide.image} 
-              alt={slide.title} 
-              className="w-full max-w-2xl mx-auto mb-8 rounded-lg shadow-2xl"
-            />
-          )}
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-normal tracking-tight mb-6">
             {slide.title}
           </h1>
@@ -34,6 +27,13 @@ const Slide = ({ slide, direction }: SlideProps) => {
             <p className="text-xl md:text-2xl lg:text-3xl font-light opacity-90 mb-4">
               {slide.subtitle}
             </p>
+          )}
+          {slide.image && (
+            <img 
+              src={slide.image} 
+              alt={slide.title} 
+              className="w-full max-w-2xl mx-auto my-8 rounded-lg shadow-2xl"
+            />
           )}
           {slide.description && (
             <p className="text-base md:text-lg lg:text-xl mt-8 opacity-80 max-w-2xl mx-auto leading-relaxed">
@@ -54,23 +54,33 @@ const Slide = ({ slide, direction }: SlideProps) => {
     return (
       <div 
         className={cn(
-          "flex flex-col justify-center h-full px-8 md:px-16 lg:px-24",
+          "relative flex flex-col justify-center h-full px-8 md:px-16 lg:px-24",
           "bg-[hsl(var(--slide-dark))] text-[hsl(var(--slide-dark-foreground))]",
           animationClass
         )}
       >
-        <div className="stagger-children max-w-4xl">
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mb-10">
-            {slide.title}
-          </h2>
+        {slide.backgroundImage && (
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-40 blur-[1px]"
+            style={{ backgroundImage: `url(${slide.backgroundImage})` }}
+          />
+        )}
+        <div className={cn(
+          "stagger-children relative z-10 w-full",
+          slide.image && slide.principles ? "grid grid-cols-1 lg:grid-cols-[1.5fr,1fr] gap-8 items-start max-w-6xl" : "max-w-4xl"
+        )}>
+          <div className="flex-1">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mb-10">
+              {slide.title}
+            </h2>
           
-          {slide.image && (
-            <img 
-              src={slide.image} 
-              alt={slide.title} 
-              className="w-full max-w-xl mb-8 rounded-lg shadow-xl"
-            />
-          )}
+            {!slide.principles && slide.image && (
+              <img 
+                src={slide.image} 
+                alt={slide.title} 
+                className="w-full max-w-xl mb-8 rounded-lg shadow-xl"
+              />
+            )}
           
           {slide.steps && (
             <div className="space-y-4 md:space-y-5">
@@ -113,6 +123,15 @@ const Slide = ({ slide, direction }: SlideProps) => {
               {slide.footer}
             </p>
           )}
+          </div>
+          
+          {slide.image && slide.principles && (
+            <img 
+              src={slide.image} 
+              alt={slide.title} 
+              className="w-full rounded-lg shadow-xl self-center"
+            />
+          )}
         </div>
       </div>
     );
@@ -126,18 +145,22 @@ const Slide = ({ slide, direction }: SlideProps) => {
         animationClass
       )}
     >
-      <div className="stagger-children max-w-4xl">
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 md:mb-8">
-          {slide.title}
-        </h2>
+      <div className={cn(
+        "stagger-children w-full",
+        slide.image && slide.futureItems ? "grid grid-cols-1 lg:grid-cols-[1.5fr,1fr] gap-8 items-center max-w-6xl" : "max-w-4xl"
+      )}>
+        <div>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 md:mb-8">
+            {slide.title}
+          </h2>
 
-        {slide.image && (
-          <img 
-            src={slide.image} 
-            alt={slide.title} 
-            className="w-full max-w-xl mb-8 rounded-lg shadow-xl"
-          />
-        )}
+          {!slide.futureItems && slide.image && (
+            <img 
+              src={slide.image} 
+              alt={slide.title} 
+              className="w-full max-w-xl mb-8 rounded-lg shadow-xl"
+            />
+          )}
 
         {slide.question && (
           <p className="text-lg md:text-xl lg:text-2xl text-primary italic mb-8">
@@ -226,6 +249,15 @@ const Slide = ({ slide, direction }: SlideProps) => {
           <p className="text-sm md:text-base mt-8 text-muted-foreground italic">
             {slide.footer}
           </p>
+        )}
+        </div>
+        
+        {slide.image && slide.futureItems && (
+          <img 
+            src={slide.image} 
+            alt={slide.title} 
+            className="w-full rounded-lg shadow-xl"
+          />
         )}
       </div>
     </div>
