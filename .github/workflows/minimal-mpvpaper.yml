@@ -28,7 +28,6 @@ jobs:
             -Dalsa=disabled \
             -Dpulse=disabled \
             -Dpipewire=disabled \
-            -Dnetwork=disabled \
             -Dtv=disabled \
             -Ddvdnav=disabled \
             -Dcdda=disabled \
