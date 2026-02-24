@@ -25,7 +25,6 @@ jobs:
             -Dcplayer=false \
             -Dlua=disabled \
             -Djavascript=disabled \
-            -Dlibass=disabled \
             -Dalsa=disabled \
             -Dpulse=disabled \
             -Dpipewire=disabled \
