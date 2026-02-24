@@ -28,16 +28,19 @@ jobs:
             -Dalsa=disabled \
             -Dpulse=disabled \
             -Dpipewire=disabled \
-            -Dtv=disabled \
+            -Djack=disabled \
+            -Dopenal=disabled \
+            -Dsndio=disabled \
             -Ddvdnav=disabled \
             -Dcdda=disabled \
+            -Dlibbluray=disabled \
             -Duchardet=disabled \
             -Dwayland=enabled \
             -Dvaapi=enabled \
             -Dx11=disabled \
             -Dvulkan=disabled \
             -Ddrm=disabled \
-            -Dopenal=disabled
+            -Dvdpau=disabled
             
       - name: Compile and install custom libmpv
         working-directory: ./mpv
