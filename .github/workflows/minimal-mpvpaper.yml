@@ -54,6 +54,7 @@ jobs:
       - name: Configure and build mpvpaper
         working-directory: ./mpvpaper
         run: |
+          export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
           meson setup build
           meson compile -C build
 
